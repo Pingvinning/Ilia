@@ -6,11 +6,13 @@ class Customer extends User {
     public Customer(String name, String email, int id) {
         super(name, email);
         this.id = id;
+        displayInfo();
+        accessSystem();
     }
 
     @Override
     public void displayInfo() {
-        System.out.println("Customer: " + name);
+        System.out.println("Customer: " + name + "\n");
     }
 
     @Override

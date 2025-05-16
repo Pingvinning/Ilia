@@ -4,6 +4,8 @@ class Admin extends User implements Notifiable {
     public Admin(String name, String email, int id) {
         super(name, email);
         this.id = id;
+        displayInfo();
+        accessSystem();
     }
 
     @Override

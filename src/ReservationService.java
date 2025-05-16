@@ -100,7 +100,11 @@ class ReservationService {
             Reservation res = new Reservation(c, r, date);
             reservations.add(res);
             recent.add(res);
-            byCustomer.computeIfAbsent(c, k -> new ArrayList<>()).add(res);
+            if (!byCustomer.containsKey(c)) { //проверка есть ли такой обьект
+                byCustomer.put(c, new ArrayList<>());
+            }
+            byCustomer.get(c).add(res);
+
             System.out.println("Booked: " + res);
         } catch (InvalidReservationException ex) {
             System.out.println("Custom Exception: " + ex.getMessage());

@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 class ConsoleUI implements UIComponent {
-    private Scanner input = new Scanner(System.in);
+    Scanner input = new Scanner(System.in);
     private ReservationService service = new ReservationService();
 
     @Override
@@ -29,28 +29,14 @@ class ConsoleUI implements UIComponent {
             renderMenu();
             choice = getSelection();
 
-            switch (choice) {
-                case 1:
-                    service.addCustomer();
-                    break;
-                case 2:
-                    service.addAdmin();
-                    break;
-                case 3:
-                    service.showRooms();
-                    break;
-                case 4:
-                    service.makeReservation();
-                    break;
-                case 5:
-                    service.listReservations();
-                    break;
-                case 6:
-                    System.out.println("Goodbye!");
-                    break;
-                default:
-                    System.out.println("Invalid option.");
-            }
+            if (choice == 1) service.addCustomer();
+                else if (choice == 2) service.addAdmin();
+                else if(choice == 3) service.showRooms();
+                else if (choice == 4) service.makeReservation();
+                else if (choice == 5) service.listReservations();
+                else if (choice == 6) System.out.println("Goodbye!");
+                else System.out.println("Invalid option.");
+
         } while (choice != 6);
     }
 }
