@@ -1,4 +1,3 @@
-package PACKAGE_NAME;
-
-public interface Notifiable {
+interface Notifiable {
+    void sendNotification(String message);
 }

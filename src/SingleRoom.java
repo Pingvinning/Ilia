@@ -1,4 +1,10 @@
-package PACKAGE_NAME;
+class SingleRoom extends Room {
+    public SingleRoom(int number, double price) {
+        super(number, price);
+    }
 
-public class SingleRoom {
+    @Override
+    public String details() {
+        return "SingleRoom " + number + " costs " + price;
+    }
 }

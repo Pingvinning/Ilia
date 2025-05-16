@@ -1,4 +1,1 @@
-package PACKAGE_NAME;
-
-public enum RoomStatus {
-}
+enum RoomStatus { FREE, OCCUPIED, CLOSED }

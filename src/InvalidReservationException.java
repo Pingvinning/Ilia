@@ -1,4 +1,5 @@
-package PACKAGE_NAME;
-
-public class InvalidReservationException {
+class InvalidReservationException extends Exception {
+    public InvalidReservationException(String msg) {
+        super(msg);
+    }
 }
